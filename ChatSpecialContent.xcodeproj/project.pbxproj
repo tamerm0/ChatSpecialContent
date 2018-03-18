@@ -20,6 +20,14 @@
 		30367496205DFB0A00042E33 /* SpecialContentDetection.h in Headers */ = {isa = PBXBuildFile; fileRef = 30367486205DFB0900042E33 /* SpecialContentDetection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30367499205DFB0A00042E33 /* SpecialContentDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30367484205DFB0900042E33 /* SpecialContentDetection.framework */; };
 		3036749A205DFB0A00042E33 /* SpecialContentDetection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30367484205DFB0900042E33 /* SpecialContentDetection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		303674AC205DFCD500042E33 /* SpecialContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674A3205DFCD500042E33 /* SpecialContent.swift */; };
+		303674AD205DFCD500042E33 /* MessageSpecialContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674A4205DFCD500042E33 /* MessageSpecialContent.swift */; };
+		303674AE205DFCD500042E33 /* LinksDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674A6205DFCD500042E33 /* LinksDetector.swift */; };
+		303674AF205DFCD500042E33 /* RegExDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674A7205DFCD500042E33 /* RegExDetector.swift */; };
+		303674B0205DFCD500042E33 /* EmoticonsDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674A8205DFCD500042E33 /* EmoticonsDetector.swift */; };
+		303674B1205DFCD500042E33 /* SpecialContentDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674A9205DFCD500042E33 /* SpecialContentDetector.swift */; };
+		303674B2205DFCD500042E33 /* MentionsDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674AA205DFCD500042E33 /* MentionsDetector.swift */; };
+		303674B3205DFCD500042E33 /* ChatContentDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674AB205DFCD500042E33 /* ChatContentDetector.swift */; };
 		BEDD734E1724699CFFFC8624 /* Pods_SpecialContentDetectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CC1204AEF511A7A3BEF204 /* Pods_SpecialContentDetectionTests.framework */; };
 		CB659A24A1651FF6DC050DEE /* Pods_SpecialContentDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB05E11B6F46B3BA4560D53 /* Pods_SpecialContentDetection.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +105,14 @@
 		3036748C205DFB0900042E33 /* SpecialContentDetectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpecialContentDetectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30367493205DFB0A00042E33 /* SpecialContentDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialContentDetectionTests.swift; sourceTree = "<group>"; };
 		30367495205DFB0A00042E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303674A3205DFCD500042E33 /* SpecialContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialContent.swift; sourceTree = "<group>"; };
+		303674A4205DFCD500042E33 /* MessageSpecialContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSpecialContent.swift; sourceTree = "<group>"; };
+		303674A6205DFCD500042E33 /* LinksDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksDetector.swift; sourceTree = "<group>"; };
+		303674A7205DFCD500042E33 /* RegExDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegExDetector.swift; sourceTree = "<group>"; };
+		303674A8205DFCD500042E33 /* EmoticonsDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonsDetector.swift; sourceTree = "<group>"; };
+		303674A9205DFCD500042E33 /* SpecialContentDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialContentDetector.swift; sourceTree = "<group>"; };
+		303674AA205DFCD500042E33 /* MentionsDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsDetector.swift; sourceTree = "<group>"; };
+		303674AB205DFCD500042E33 /* ChatContentDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatContentDetector.swift; sourceTree = "<group>"; };
 		39CC1204AEF511A7A3BEF204 /* Pods_SpecialContentDetectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpecialContentDetectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D98DF3E7665E95A538F9BE /* Pods-ChatSpecialContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSpecialContent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSpecialContent/Pods-ChatSpecialContent.debug.xcconfig"; sourceTree = "<group>"; };
 		4B6511924C388F7B2B2CBE9D /* Pods-SpecialContentDetection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpecialContentDetection.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpecialContentDetection/Pods-SpecialContentDetection.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +237,9 @@
 		30367485205DFB0900042E33 /* SpecialContentDetection */ = {
 			isa = PBXGroup;
 			children = (
+				303674AB205DFCD500042E33 /* ChatContentDetector.swift */,
+				303674A5205DFCD500042E33 /* Detectors */,
+				303674A2205DFCD500042E33 /* Models */,
 				30367486205DFB0900042E33 /* SpecialContentDetection.h */,
 				30367487205DFB0900042E33 /* Info.plist */,
 			);
@@ -234,6 +253,27 @@
 				30367495205DFB0A00042E33 /* Info.plist */,
 			);
 			path = SpecialContentDetectionTests;
+			sourceTree = "<group>";
+		};
+		303674A2205DFCD500042E33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				303674A3205DFCD500042E33 /* SpecialContent.swift */,
+				303674A4205DFCD500042E33 /* MessageSpecialContent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		303674A5205DFCD500042E33 /* Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				303674A6205DFCD500042E33 /* LinksDetector.swift */,
+				303674A7205DFCD500042E33 /* RegExDetector.swift */,
+				303674A8205DFCD500042E33 /* EmoticonsDetector.swift */,
+				303674A9205DFCD500042E33 /* SpecialContentDetector.swift */,
+				303674AA205DFCD500042E33 /* MentionsDetector.swift */,
+			);
+			path = Detectors;
 			sourceTree = "<group>";
 		};
 		B53F7B21E084C46D4317798F /* Pods */ = {
@@ -389,6 +429,7 @@
 					};
 					30367483205DFB0900042E33 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					3036748B205DFB0900042E33 = {
@@ -641,6 +682,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303674AC205DFCD500042E33 /* SpecialContent.swift in Sources */,
+				303674B3205DFCD500042E33 /* ChatContentDetector.swift in Sources */,
+				303674B2205DFCD500042E33 /* MentionsDetector.swift in Sources */,
+				303674AE205DFCD500042E33 /* LinksDetector.swift in Sources */,
+				303674B0205DFCD500042E33 /* EmoticonsDetector.swift in Sources */,
+				303674AD205DFCD500042E33 /* MessageSpecialContent.swift in Sources */,
+				303674AF205DFCD500042E33 /* RegExDetector.swift in Sources */,
+				303674B1205DFCD500042E33 /* SpecialContentDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +862,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44D98DF3E7665E95A538F9BE /* Pods-ChatSpecialContent.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatSpecialContent/Info.plist;
@@ -828,6 +878,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 929074CA976A66A2D9711355 /* Pods-ChatSpecialContent.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatSpecialContent/Info.plist;
@@ -905,6 +956,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06D7CA14E7DDFF69E33D58EB /* Pods-SpecialContentDetection.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -918,6 +970,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.SpecialContentDetection;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -929,6 +982,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B6511924C388F7B2B2CBE9D /* Pods-SpecialContentDetection.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
