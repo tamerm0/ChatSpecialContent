@@ -1,0 +1,6 @@
+framework module Pods_SpecialContentDetectionTests {
+  umbrella header "Pods-SpecialContentDetectionTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

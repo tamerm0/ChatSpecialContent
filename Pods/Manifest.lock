@@ -1,0 +1,27 @@
+PODS:
+  - Kanna (4.0.0)
+  - RxBlocking (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - RxTest (4.1.2):
+    - RxSwift (~> 4.0)
+
+DEPENDENCIES:
+  - Kanna (~> 4.0.0)
+  - RxBlocking (~> 4.0)
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - RxTest (~> 4.0)
+
+SPEC CHECKSUMS:
+  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
+  RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
+
+PODFILE CHECKSUM: c8730b8ad3248b9521a0fff95b8ae65636170b47
+
+COCOAPODS: 1.4.0
