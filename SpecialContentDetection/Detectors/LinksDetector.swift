@@ -8,15 +8,20 @@
 
 import RxSwift
 
-public class LinksDetector: RegExDetector, SpecialContentDetector {
+class LinksDetector: RegExDetector, SpecialContentDetector {
   
   init() {
     let regEx = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
     super.init(regEx: regEx)
   }
   
-  public func detect(in message: String) -> Observable<SpecialContent> {
+  func detect(in message: String) -> Maybe<SpecialContentMatch> {
     return findMatches(in: message)
-      .map { .link(LinkContent(url: String($0), title: nil)) }
+      .map { .linkMatches($0) }
+  }
+  
+  func map(matches: [Substring]) -> Single<SpecialContent> {
+    let links = matches.map { LinkContent(url: String($0), title: nil) }
+    return Observable<SpecialContent>.of(.links(links)).asSingle()
   }
 }

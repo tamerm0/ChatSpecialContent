@@ -1,20 +1,13 @@
 //
 //  SpecialContent.swift
-//  ChatSpecialContent
+//  SpecialContentDetection
 //
-//  Created by Tamer Pateer on 11/3/18.
+//  Created by Tamer Pateer on 19/3/18.
 //  Copyright © 2018 Atlassian. All rights reserved.
 //
 
-import Foundation
-
-public enum SpecialContent {
-	case mention(String)
-	case emoticon(String)
-	case link(LinkContent)
-}
-
-public struct LinkContent: Codable {
-	let url: String
-	let title: String?
+enum SpecialContent {
+  case mentions([String])
+  case emoticons([String])
+  case links([LinkContent])
 }

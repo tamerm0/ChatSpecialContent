@@ -8,6 +8,7 @@
 
 import RxSwift
 
-public protocol SpecialContentDetector: class {
-	func detect(in message: String) -> Observable<SpecialContent>
+protocol SpecialContentDetector: class {
+	func detect(in message: String) -> Maybe<SpecialContentMatch>
+  func map(matches: [Substring]) -> Single<SpecialContent>
 }

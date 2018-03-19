@@ -10,18 +10,15 @@ public struct MessageSpecialContent: Codable {
 	var mentions: [String]?
 	var emoticons: [String]?
 	var links: [LinkContent]?
-	
-	public mutating func update(with content: SpecialContent) {
-		switch content {
-		case .emoticon(let emoticon):
-      if emoticons == nil { emoticons = [] }
-			emoticons?.append(emoticon)
-		case .mention(let mention):
-      if mentions == nil { mentions = [] }
-			mentions?.append(mention)
-		case .link(let link):
-      if links == nil { links = [] }
-			links?.append(link)
-		}
-	}
+  
+  mutating func update(with content: SpecialContent) {
+    switch content {
+    case .emoticons(let emoticons):
+      self.emoticons = emoticons
+    case .mentions(let mentions):
+      self.mentions = mentions
+    case .links(let links):
+      self.links = links
+    }
+  }
 }

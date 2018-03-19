@@ -50,12 +50,12 @@ class TestDetector: ChatContentDetector {
     encoder.outputFormatting = .prettyPrinted
   }
   
-  func detectContent(in message: String) -> Single<String> {
+  func detectContent(in message: String) -> Maybe<String> {
     return super.detectContent(in: message, detectors: [.mention, .emoticon, .link])
       .map({ [encoder] content -> Data? in try? encoder.encode(content) }) // encode to JSON data
       .map({ jsonData -> String? in jsonData.flatMap { String(data: $0, encoding: .utf8) } })
-      .flatMap({ (jsonString) -> Single<String> in
-        Single.create(subscribe: { (single) -> Disposable in
+      .flatMap({ (jsonString) -> Maybe<String> in
+        Maybe.create(subscribe: { (single) -> Disposable in
           if let jsonString = jsonString {
             single(.success(jsonString.replacingOccurrences(of: "\\/", with: "/")))
           } else {

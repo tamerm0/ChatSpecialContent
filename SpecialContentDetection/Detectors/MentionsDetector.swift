@@ -8,18 +8,19 @@
 
 import RxSwift
 
-public class MentionsDetector: RegExDetector, SpecialContentDetector {
+class MentionsDetector: RegExDetector, SpecialContentDetector {
 	
   init() {
     super.init(pattern: "\\@\\w+")!
   }
   
-	public func detect(in message: String) -> Observable<SpecialContent> {
-    return findMatches(in: message)
-      .map { match in
-        let firstIndex = match.index(after: match.index(of: "@")!)
-        let mentionRange = firstIndex..<match.endIndex
-        return .mention(String(match[mentionRange]))
-    }
+	func detect(in message: String) -> Maybe<SpecialContentMatch> {
+    return findMatches(in: message) // find matches in message
+      .map { .mentionMatches($0.map { $0.dropFirst() }) } // remove @ from matches
 	}
+  
+  func map(matches: [Substring]) -> Single<SpecialContent> {
+    let mentions = matches.map { String($0) }
+    return Observable<SpecialContent>.of(.mentions(mentions)).asSingle()
+  }
 }

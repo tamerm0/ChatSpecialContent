@@ -8,19 +8,19 @@
 
 import RxSwift
 
-public class EmoticonsDetector: RegExDetector, SpecialContentDetector {
+class EmoticonsDetector: RegExDetector, SpecialContentDetector {
   
   init() {
     super.init(pattern: "\\(\\w{1,15}\\)")!
   }
   
-  public func detect(in message: String) -> Observable<SpecialContent> {
+  func detect(in message: String) -> Maybe<SpecialContentMatch> {
     return findMatches(in: message)
-      .map { match in
-        let firstIndex = match.index(after: match.index(of: "(")!)
-        let lastIndex = match.index(of: ")")!
-        let emoticonRange = firstIndex..<lastIndex
-        return .emoticon(String(match[emoticonRange]))
-    }
+      .map { .emoticonMatches($0.map { $0.dropFirst().dropLast() }) }
+  }
+  
+  func map(matches: [Substring]) -> Single<SpecialContent> {
+    let emoticons = matches.map { String($0) }
+    return Observable<SpecialContent>.of(.emoticons(emoticons)).asSingle()
   }
 }

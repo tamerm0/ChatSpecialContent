@@ -13,7 +13,7 @@ import RxCocoa
 public class RegExDetector: Any {
   
   let regEx: NSRegularExpression
-  let dispatchQueue = DispatchQueue(label: "String")
+  let dispatchQueue = DispatchQueue(label: "String", attributes: .concurrent)
   
   init(regEx: NSRegularExpression) {
     self.regEx = regEx
@@ -27,21 +27,25 @@ public class RegExDetector: Any {
     }
   }
   
-  func findMatches(in string: String) -> Observable<Substring> {
-    let subject = ReplaySubject<Substring>.createUnbounded()
-    dispatchQueue.async {
-      let range = string.startIndex..<string.endIndex
-      let nsrange = NSRange(range, in: string)
-      self.regEx.enumerateMatches(in: string, options: .reportCompletion, range: nsrange) { (result, flags, _) in
-        if let result = result,
-          let range  = Range(result.range, in: string) {
-          let match = string[range]
-          subject.onNext(match)
-        } else if flags.contains(.completed) {
-          subject.onCompleted()
+  func findMatches(in string: String) -> Maybe<[Substring]> {
+    return Maybe.create(subscribe: { [dispatchQueue] (maybe) -> Disposable in
+      dispatchQueue.async {
+        let range = string.startIndex..<string.endIndex
+        let nsrange = NSRange(range, in: string)
+        let matches = self.regEx
+          .matches(in: string, options: .reportCompletion, range: nsrange)
+          .map({ (result) -> Substring in
+            let range  = Range(result.range, in: string)!
+            let match = string[range]
+            return match
+          })
+        if matches.isEmpty {
+          maybe(.completed)
+        } else {
+          maybe(.success(matches))
         }
       }
-    }
-    return subject
+      return Disposables.create()
+    })
   }
 }
