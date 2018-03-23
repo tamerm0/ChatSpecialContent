@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatContentTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatSpecialContent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8Uz-Xi-FF7">
+                                <rect key="frame" x="169" y="371" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,13 +52,16 @@
                             <constraint firstItem="7gR-el-c2W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="W6J-CW-QJV"/>
                             <constraint firstItem="m1R-ly-I5d" firstAttribute="top" secondItem="7gR-el-c2W" secondAttribute="bottom" constant="16" id="XKb-xD-ndW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m1R-ly-I5d" secondAttribute="bottom" constant="10" id="sao-ze-HmF"/>
+                            <constraint firstItem="8Uz-Xi-FF7" firstAttribute="centerX" secondItem="m1R-ly-I5d" secondAttribute="centerX" id="tje-nD-KtC"/>
                             <constraint firstItem="17d-2L-85r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ua3-ce-B0I"/>
+                            <constraint firstItem="8Uz-Xi-FF7" firstAttribute="centerY" secondItem="m1R-ly-I5d" secondAttribute="centerY" id="wfF-at-Hst"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m1R-ly-I5d" secondAttribute="trailing" constant="10" id="xfC-G3-C6B"/>
                             <constraint firstItem="17d-2L-85r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="zxY-kM-RyR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="8Uz-Xi-FF7" id="4qb-uv-Fwl"/>
                         <outlet property="detectButton" destination="7gR-el-c2W" id="6kj-Js-hrP"/>
                         <outlet property="textFieldMessage" destination="17d-2L-85r" id="RNY-d4-Q79"/>
                         <outlet property="textViewSpecialContent" destination="m1R-ly-I5d" id="2uE-gj-fOU"/>

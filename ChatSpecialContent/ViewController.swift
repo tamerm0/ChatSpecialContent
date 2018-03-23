@@ -16,6 +16,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var textFieldMessage: UITextField!
   @IBOutlet weak var textViewSpecialContent: UITextView!
   @IBOutlet weak var detectButton: UIButton!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   let detector = TestDetector()
   let disposeBag = DisposeBag()
@@ -29,12 +30,24 @@ class ViewController: UIViewController {
         return Observable.of(text)
       }
       .distinctUntilChanged { $0 == $1 }
-      .map { [detector] in detector.detectContent(in: $0) }
+      .do(onNext: { [textViewSpecialContent, activityIndicator] (message) in
+        textViewSpecialContent?.text = ""
+        activityIndicator?.isHidden = false
+        activityIndicator?.startAnimating()
+      })
+      .map { [activityIndicator, detector] in detector.detectContent(in: $0)
+        .observeOn(MainScheduler.asyncInstance)
+        .do(onCompleted: { [activityIndicator] in
+          activityIndicator?.isHidden = true
+          activityIndicator?.stopAnimating()
+        })
+      }
       .switchLatest()
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { [textViewSpecialContent] (content) in
         textViewSpecialContent?.text = content
-      }).disposed(by: disposeBag)
+      })
+      .disposed(by: disposeBag)
   }
 }
 
@@ -55,11 +68,11 @@ class TestDetector: ChatContentDetector {
       .map({ [encoder] content -> Data? in try? encoder.encode(content) }) // encode to JSON data
       .map({ jsonData -> String? in jsonData.flatMap { String(data: $0, encoding: .utf8) } })
       .flatMap({ (jsonString) -> Maybe<String> in
-        Maybe.create(subscribe: { (single) -> Disposable in
+        Maybe.create(subscribe: { (maybe) -> Disposable in
           if let jsonString = jsonString {
-            single(.success(jsonString.replacingOccurrences(of: "\\/", with: "/")))
+            maybe(.success(jsonString.replacingOccurrences(of: "\\/", with: "/")))
           } else {
-            single(.error(ContentError.empty))
+            maybe(.error(ContentError.empty))
           }
           return Disposables.create()
         })
