@@ -8,6 +8,7 @@
 
 import RxSwift
 import Kanna
+import Alamofire
 
 protocol LinkContentLoader {
   func linkContent(from url: String) -> Single<LinkContent>
@@ -15,23 +16,30 @@ protocol LinkContentLoader {
 
 class LinkContentLoaderImpl: LinkContentLoader {
   
-  let session = URLSession(configuration: .default)
-  
   func linkContent(from url: String) -> Single<LinkContent> {
-    return Single.create(subscribe: { [session] (single) -> Disposable in
-      let task = session.dataTask(with: URL(string: url)!) { data, response, error in
-        guard
-          let data = data,
-          let html = String(data: data, encoding: .utf8),
-          let htmlDocument = try? Kanna.HTML(html: html, encoding: .utf8) else {
-          single(.success(LinkContent(url: url, title: nil)))
-          return
-        }
-        single(.success(LinkContent(url: url, title: htmlDocument.title)))
+    return Single.create(subscribe: { (single) -> Disposable in
+      // Adding HTTP scheme
+      guard var httpUrl = URL(string: url) else {
+//        single(.error())
+        return Disposables.create()
       }
-      task.resume()
+      if httpUrl.scheme == nil {
+        httpUrl = URL(string: "http://" + url)!
+      }
+      
+      let request = Alamofire.request(httpUrl)
+      request.responseString(completionHandler: { (response) in
+        guard let html = response.result.value,
+          let htmlDocument = try? Kanna.HTML(html: html, encoding: .utf8)
+          else {
+            single(.success(LinkContent(url: url, title: nil)))
+            return
+        }
+        let title = htmlDocument.title?.trimmingCharacters(in: .whitespacesAndNewlines)
+        single(.success(LinkContent(url: url, title: title)))
+      })
       return Disposables.create {
-        task.cancel()
+        request.cancel()
       }
     })
   }

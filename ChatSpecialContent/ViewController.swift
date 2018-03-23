@@ -23,6 +23,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    activityIndicator.isHidden = true
     detectButton.rx.tap
       .withLatestFrom(textFieldMessage.rx.text)
       .flatMap { (text) -> Observable<String> in
