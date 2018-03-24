@@ -11,12 +11,18 @@ import RxSwift
 class MentionsDetector: RegExDetector, SpecialContentDetector {
 	
   init() {
-    super.init(pattern: "\\@\\w+")!
+    super.init(pattern: "(\\s|\\W|^)\\@\\w+")!
   }
   
 	func detect(in message: String) -> Maybe<SpecialContentMatch> {
     return findMatches(in: message) // find matches in message
-      .map { .mentionMatches($0.map { $0.dropFirst() }) } // remove @ from matches
+      .map { matches in
+        let cleanedMatches: [Substring] = matches.map { match in
+          let index = match.index(after: match.index(of: "@")!)
+          return match[index..<match.endIndex]
+        }
+        return .mentionMatches(cleanedMatches)
+    } // remove @ from matches
 	}
   
   func map(matches: [Substring]) -> Single<SpecialContent> {

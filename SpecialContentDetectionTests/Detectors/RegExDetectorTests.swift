@@ -8,6 +8,7 @@
 
 import XCTest
 import RxBlocking
+import RxSwift
 @testable import SpecialContentDetection
 
 class RegExDetectorTests: XCTestCase {
@@ -68,5 +69,32 @@ class RegExDetectorTests: XCTestCase {
     XCTAssertEqual(firstMatches[0], "123")
     XCTAssertEqual(firstMatches[1], "08")
     XCTAssertEqual(firstMatches[2], "3010")
+  }
+  
+  func testConcurrent() {
+    guard let detector = RegExDetector(pattern: "[0,1,2,3,4,5,6,7,8,9]+")
+      else { XCTFail("Failed to create Detector"); return }
+    
+    let first = detector.findMatches(in: "no matches here!")
+    let second = detector.findMatches(in: "123 one match yaaay")
+    let third = detector.findMatches(in: "123 456 157")
+    
+    guard let results = try? Observable.concat([first.asObservable(), second.asObservable(), third.asObservable()]).toBlocking().toArray()
+      else { XCTFail("Detection fails"); return }
+    
+    guard results.count == 2
+      else { XCTFail("Results are missing"); return }
+    
+    let secondDetectionResult = results[0]
+    guard secondDetectionResult.count == 1
+      else { XCTFail("second is incorrect"); return }
+    XCTAssertEqual(secondDetectionResult[0], "123")
+    
+    let thirdDetectionResult = results[1]
+    guard thirdDetectionResult.count == 3
+      else { XCTFail("third is incorrect"); return }
+    XCTAssertEqual(thirdDetectionResult[0], "123")
+    XCTAssertEqual(thirdDetectionResult[1], "456")
+    XCTAssertEqual(thirdDetectionResult[2], "157")
   }
 }

@@ -32,6 +32,8 @@
 		303674B5205E41E300042E33 /* LinkContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303674B4205E41E300042E33 /* LinkContent.swift */; };
 		30A8083F2063D7D300D0845B /* LinkContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A8083E2063D7D300D0845B /* LinkContentLoader.swift */; };
 		30A8084B2066937400D0845B /* RegExDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A8084A2066937400D0845B /* RegExDetectorTests.swift */; };
+		30A8084D20669D9D00D0845B /* MentionsDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A8084C20669D9D00D0845B /* MentionsDetectorTests.swift */; };
+		30A808512066ADD000D0845B /* EmoticonsDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A808502066ADD000D0845B /* EmoticonsDetectorTests.swift */; };
 		BEDD734E1724699CFFFC8624 /* Pods_SpecialContentDetectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CC1204AEF511A7A3BEF204 /* Pods_SpecialContentDetectionTests.framework */; };
 		CB659A24A1651FF6DC050DEE /* Pods_SpecialContentDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB05E11B6F46B3BA4560D53 /* Pods_SpecialContentDetection.framework */; };
 /* End PBXBuildFile section */
@@ -120,8 +122,10 @@
 		303674AB205DFCD500042E33 /* ChatContentDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatContentDetector.swift; sourceTree = "<group>"; };
 		303674B4205E41E300042E33 /* LinkContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkContent.swift; sourceTree = "<group>"; };
 		30A8083E2063D7D300D0845B /* LinkContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkContentLoader.swift; sourceTree = "<group>"; };
-		30A808492066937400D0845B /* SpecialContentDetectionTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpecialContentDetectionTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		30A8084A2066937400D0845B /* RegExDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegExDetectorTests.swift; sourceTree = "<group>"; };
+		30A8084C20669D9D00D0845B /* MentionsDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsDetectorTests.swift; sourceTree = "<group>"; };
+		30A8084F2066A4FF00D0845B /* SpecialContentDetectionTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpecialContentDetectionTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		30A808502066ADD000D0845B /* EmoticonsDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonsDetectorTests.swift; sourceTree = "<group>"; };
 		39CC1204AEF511A7A3BEF204 /* Pods_SpecialContentDetectionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpecialContentDetectionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D98DF3E7665E95A538F9BE /* Pods-ChatSpecialContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSpecialContent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatSpecialContent/Pods-ChatSpecialContent.debug.xcconfig"; sourceTree = "<group>"; };
 		4B6511924C388F7B2B2CBE9D /* Pods-SpecialContentDetection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpecialContentDetection.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpecialContentDetection/Pods-SpecialContentDetection.release.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				30A808482066933C00D0845B /* Detectors */,
+				30A8084F2066A4FF00D0845B /* SpecialContentDetectionTests-Bridging-Header.h */,
 				30367495205DFB0A00042E33 /* Info.plist */,
 			);
 			path = SpecialContentDetectionTests;
@@ -301,7 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				30A8084A2066937400D0845B /* RegExDetectorTests.swift */,
-				30A808492066937400D0845B /* SpecialContentDetectionTests-Bridging-Header.h */,
+				30A8084C20669D9D00D0845B /* MentionsDetectorTests.swift */,
+				30A808502066ADD000D0845B /* EmoticonsDetectorTests.swift */,
 			);
 			path = Detectors;
 			sourceTree = "<group>";
@@ -736,7 +742,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A8084D20669D9D00D0845B /* MentionsDetectorTests.swift in Sources */,
 				30A8084B2066937400D0845B /* RegExDetectorTests.swift in Sources */,
+				30A808512066ADD000D0845B /* EmoticonsDetectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,7 +1061,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.SpecialContentDetectionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SpecialContentDetectionTests/Detectors/SpecialContentDetectionTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpecialContentDetectionTests/SpecialContentDetectionTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1072,7 +1080,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.SpecialContentDetectionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SpecialContentDetectionTests/Detectors/SpecialContentDetectionTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpecialContentDetectionTests/SpecialContentDetectionTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSpecialContent.app/ChatSpecialContent";
