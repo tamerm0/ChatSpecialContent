@@ -13,15 +13,17 @@ import RxCocoa
 public class RegExDetector: Any {
   
   let regEx: NSRegularExpression
-  let dispatchQueue = DispatchQueue(label: "String", attributes: .concurrent)
+  let dispatchQueue: DispatchQueue
   
   init(regEx: NSRegularExpression) {
     self.regEx = regEx
+    dispatchQueue = DispatchQueue(label: regEx.pattern, attributes: .concurrent)
   }
   
   init?(pattern: String) {
     do {
       self.regEx = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+      dispatchQueue = DispatchQueue(label: pattern, attributes: .concurrent)
     } catch {
       return nil
     }
