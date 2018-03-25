@@ -25,6 +25,8 @@ target 'SpecialContentDetection' do
     # Pods for testing
     pod 'RxBlocking', '~> 4.0'
     pod 'RxTest',     '~> 4.0'
+    pod 'OHHTTPStubs'
+    pod 'OHHTTPStubs/Swift'
   end
 
 end

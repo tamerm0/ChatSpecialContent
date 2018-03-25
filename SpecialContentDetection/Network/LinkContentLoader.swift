@@ -18,7 +18,13 @@ class LinkContentLoaderImpl: LinkContentLoader {
   
   func linkContent(from url: String) -> Single<LinkContent> {
     return Single.create(subscribe: { (single) -> Disposable in
-      let httpUrl = url.starts(with: "http") ? url : "http://" + url
+      let httpUrl: String
+      if let Url = URL(string: url), Url.scheme == nil {
+        httpUrl = "http://" + url
+      } else {
+        httpUrl = url
+      }
+      
       let request = Alamofire.request(httpUrl)
       request.responseString(completionHandler: { (response) in
         guard let html = response.result.value,
