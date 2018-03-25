@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public enum ContentDetector {
+public enum ContentType {
 	case mention
 	case emoticon
 	case link
@@ -42,11 +42,11 @@ open class ChatContentDetector: Any {
   
 	public init() {}
 	
-	public func detectContent(in message: String, detectors: [ContentDetector]) -> Maybe<MessageSpecialContent> {
+	public func detectContent(in message: String, types: [ContentType]) -> Maybe<MessageSpecialContent> {
 		return Maybe.create(subscribe: { [schduler] (maybe) -> Disposable in
 			var disposeBag: DisposeBag? = DisposeBag()
       var matches = Matches()
-			detectors
+			types
         .matches(in: message)
         .observeOn(schduler)
         .subscribe(onNext: { (match) in
@@ -58,7 +58,7 @@ open class ChatContentDetector: Any {
         } else {
           matches.filterOverlaps()
           var specialContent = MessageSpecialContent()
-          detectors.map(matches: matches)
+          types.map(matches: matches)
             .observeOn(schduler)
             .subscribe(onNext: { (content) in
             specialContent.update(with: content)
@@ -74,7 +74,7 @@ open class ChatContentDetector: Any {
 	}
 }
 
-private extension Array where Element == ContentDetector {
+private extension Array where Element == ContentType {
   
   func matches(in message: String) -> Observable<SpecialContentMatch> {
     let observables = map { $0.detector.detect(in: message).asObservable() }

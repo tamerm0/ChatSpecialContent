@@ -25,8 +25,6 @@ struct Matches {
   mutating func filterOverlaps() {
     guard let links = links else { return }
     
-    mentions = (mentions?.filterOverlaps(with: links))
-      .flatMap { $0.isEmpty ? nil : $0 }
     emoticons = (emoticons?.filterOverlaps(with: links))
       .flatMap { $0.isEmpty ? nil : $0 }
   }

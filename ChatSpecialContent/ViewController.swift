@@ -65,7 +65,7 @@ class TestDetector: ChatContentDetector {
   }
   
   func detectContent(in message: String) -> Maybe<String> {
-    return super.detectContent(in: message, detectors: [.mention, .emoticon, .link])
+    return super.detectContent(in: message, types: [.mention, .emoticon, .link])
       .map({ [encoder] content -> Data? in try? encoder.encode(content) }) // encode to JSON data
       .map({ jsonData -> String? in jsonData.flatMap { String(data: $0, encoding: .utf8) } })
       .flatMap({ (jsonString) -> Maybe<String> in
