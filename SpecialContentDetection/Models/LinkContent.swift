@@ -8,7 +8,11 @@
 
 import Foundation
 
-public struct LinkContent: Codable {
+public struct LinkContent: Codable, Equatable {
   let url: String
   let title: String?
+  
+  public static func ==(lhs: LinkContent, rhs: LinkContent) -> Bool {
+    return lhs.url == rhs.url && lhs.title == rhs.title
+  }
 }
