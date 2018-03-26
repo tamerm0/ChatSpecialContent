@@ -6,7 +6,7 @@
 ## How to run
 To run the app, 
 1. open ChatSpecialContent.xcworkspace and run ChatSpecialContent target
-2. Write the message you want to detect content in i. 
+2. Write the message you want to detect content in top text field. 
 3. Press detect.
 
 JSON content will appear below when it is ready.
