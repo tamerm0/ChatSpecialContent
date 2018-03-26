@@ -15,8 +15,6 @@
 		30367457205DF9FE00042E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30367455205DF9FE00042E33 /* Main.storyboard */; };
 		30367459205DF9FE00042E33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30367458205DF9FE00042E33 /* Assets.xcassets */; };
 		3036745C205DF9FE00042E33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3036745A205DF9FE00042E33 /* LaunchScreen.storyboard */; };
-		30367467205DF9FE00042E33 /* ChatSpecialContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30367466205DF9FE00042E33 /* ChatSpecialContentTests.swift */; };
-		30367472205DF9FE00042E33 /* ChatSpecialContentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30367471205DF9FE00042E33 /* ChatSpecialContentUITests.swift */; };
 		3036748D205DFB0900042E33 /* SpecialContentDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30367484205DFB0900042E33 /* SpecialContentDetection.framework */; };
 		30367496205DFB0A00042E33 /* SpecialContentDetection.h in Headers */ = {isa = PBXBuildFile; fileRef = 30367486205DFB0900042E33 /* SpecialContentDetection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30367499205DFB0A00042E33 /* SpecialContentDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30367484205DFB0900042E33 /* SpecialContentDetection.framework */; };
@@ -45,20 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		30367463205DF9FE00042E33 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30367446205DF9FE00042E33 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3036744D205DF9FE00042E33;
-			remoteInfo = ChatSpecialContent;
-		};
-		3036746E205DF9FE00042E33 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30367446205DF9FE00042E33 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3036744D205DF9FE00042E33;
-			remoteInfo = ChatSpecialContent;
-		};
 		3036748E205DFB0900042E33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30367446205DF9FE00042E33 /* Project object */;
@@ -107,12 +91,6 @@
 		30367458205DF9FE00042E33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3036745B205DF9FE00042E33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3036745D205DF9FE00042E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30367462205DF9FE00042E33 /* ChatSpecialContentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSpecialContentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30367466205DF9FE00042E33 /* ChatSpecialContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSpecialContentTests.swift; sourceTree = "<group>"; };
-		30367468205DF9FE00042E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3036746D205DF9FE00042E33 /* ChatSpecialContentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatSpecialContentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30367471205DF9FE00042E33 /* ChatSpecialContentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSpecialContentUITests.swift; sourceTree = "<group>"; };
-		30367473205DF9FE00042E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30367484205DFB0900042E33 /* SpecialContentDetection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpecialContentDetection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30367486205DFB0900042E33 /* SpecialContentDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialContentDetection.h; sourceTree = "<group>"; };
 		30367487205DFB0900042E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,20 +136,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3036745F205DF9FE00042E33 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3036746A205DF9FE00042E33 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		30367480205DFB0900042E33 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,8 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				30367450205DF9FE00042E33 /* ChatSpecialContent */,
-				30367465205DF9FE00042E33 /* ChatSpecialContentTests */,
-				30367470205DF9FE00042E33 /* ChatSpecialContentUITests */,
 				30367485205DFB0900042E33 /* SpecialContentDetection */,
 				30367492205DFB0A00042E33 /* SpecialContentDetectionTests */,
 				3036744F205DF9FE00042E33 /* Products */,
@@ -220,8 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				3036744E205DF9FE00042E33 /* ChatSpecialContent.app */,
-				30367462205DF9FE00042E33 /* ChatSpecialContentTests.xctest */,
-				3036746D205DF9FE00042E33 /* ChatSpecialContentUITests.xctest */,
 				30367484205DFB0900042E33 /* SpecialContentDetection.framework */,
 				3036748C205DFB0900042E33 /* SpecialContentDetectionTests.xctest */,
 			);
@@ -239,24 +199,6 @@
 				3036745D205DF9FE00042E33 /* Info.plist */,
 			);
 			path = ChatSpecialContent;
-			sourceTree = "<group>";
-		};
-		30367465205DF9FE00042E33 /* ChatSpecialContentTests */ = {
-			isa = PBXGroup;
-			children = (
-				30367466205DF9FE00042E33 /* ChatSpecialContentTests.swift */,
-				30367468205DF9FE00042E33 /* Info.plist */,
-			);
-			path = ChatSpecialContentTests;
-			sourceTree = "<group>";
-		};
-		30367470205DF9FE00042E33 /* ChatSpecialContentUITests */ = {
-			isa = PBXGroup;
-			children = (
-				30367471205DF9FE00042E33 /* ChatSpecialContentUITests.swift */,
-				30367473205DF9FE00042E33 /* Info.plist */,
-			);
-			path = ChatSpecialContentUITests;
 			sourceTree = "<group>";
 		};
 		30367485205DFB0900042E33 /* SpecialContentDetection */ = {
@@ -379,42 +321,6 @@
 			productReference = 3036744E205DF9FE00042E33 /* ChatSpecialContent.app */;
 			productType = "com.apple.product-type.application";
 		};
-		30367461205DF9FE00042E33 /* ChatSpecialContentTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30367479205DF9FE00042E33 /* Build configuration list for PBXNativeTarget "ChatSpecialContentTests" */;
-			buildPhases = (
-				3036745E205DF9FE00042E33 /* Sources */,
-				3036745F205DF9FE00042E33 /* Frameworks */,
-				30367460205DF9FE00042E33 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				30367464205DF9FE00042E33 /* PBXTargetDependency */,
-			);
-			name = ChatSpecialContentTests;
-			productName = ChatSpecialContentTests;
-			productReference = 30367462205DF9FE00042E33 /* ChatSpecialContentTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		3036746C205DF9FE00042E33 /* ChatSpecialContentUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3036747C205DF9FE00042E33 /* Build configuration list for PBXNativeTarget "ChatSpecialContentUITests" */;
-			buildPhases = (
-				30367469205DF9FE00042E33 /* Sources */,
-				3036746A205DF9FE00042E33 /* Frameworks */,
-				3036746B205DF9FE00042E33 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3036746F205DF9FE00042E33 /* PBXTargetDependency */,
-			);
-			name = ChatSpecialContentUITests;
-			productName = ChatSpecialContentUITests;
-			productReference = 3036746D205DF9FE00042E33 /* ChatSpecialContentUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		30367483205DFB0900042E33 /* SpecialContentDetection */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3036749B205DFB0A00042E33 /* Build configuration list for PBXNativeTarget "SpecialContentDetection" */;
@@ -471,16 +377,6 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					30367461205DF9FE00042E33 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 3036744D205DF9FE00042E33;
-					};
-					3036746C205DF9FE00042E33 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 3036744D205DF9FE00042E33;
-					};
 					30367483205DFB0900042E33 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
@@ -508,8 +404,6 @@
 			projectRoot = "";
 			targets = (
 				3036744D205DF9FE00042E33 /* ChatSpecialContent */,
-				30367461205DF9FE00042E33 /* ChatSpecialContentTests */,
-				3036746C205DF9FE00042E33 /* ChatSpecialContentUITests */,
 				30367483205DFB0900042E33 /* SpecialContentDetection */,
 				3036748B205DFB0900042E33 /* SpecialContentDetectionTests */,
 			);
@@ -524,20 +418,6 @@
 				3036745C205DF9FE00042E33 /* LaunchScreen.storyboard in Resources */,
 				30367459205DF9FE00042E33 /* Assets.xcassets in Resources */,
 				30367457205DF9FE00042E33 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30367460205DF9FE00042E33 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3036746B205DF9FE00042E33 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,22 +603,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3036745E205DF9FE00042E33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30367467205DF9FE00042E33 /* ChatSpecialContentTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30367469205DF9FE00042E33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30367472205DF9FE00042E33 /* ChatSpecialContentUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3036747F205DFB0900042E33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -777,16 +641,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		30367464205DF9FE00042E33 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3036744D205DF9FE00042E33 /* ChatSpecialContent */;
-			targetProxy = 30367463205DF9FE00042E33 /* PBXContainerItemProxy */;
-		};
-		3036746F205DF9FE00042E33 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3036744D205DF9FE00042E33 /* ChatSpecialContent */;
-			targetProxy = 3036746E205DF9FE00042E33 /* PBXContainerItemProxy */;
-		};
 		3036748F205DFB0900042E33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 30367483205DFB0900042E33 /* SpecialContentDetection */;
@@ -963,68 +817,6 @@
 			};
 			name = Release;
 		};
-		3036747A205DF9FE00042E33 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ChatSpecialContentTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.ChatSpecialContentTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSpecialContent.app/ChatSpecialContent";
-			};
-			name = Debug;
-		};
-		3036747B205DF9FE00042E33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ChatSpecialContentTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.ChatSpecialContentTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatSpecialContent.app/ChatSpecialContent";
-			};
-			name = Release;
-		};
-		3036747D205DF9FE00042E33 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ChatSpecialContentUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.ChatSpecialContentUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChatSpecialContent;
-			};
-			name = Debug;
-		};
-		3036747E205DF9FE00042E33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ChatSpecialContentUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Atlassian.ChatSpecialContentUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChatSpecialContent;
-			};
-			name = Release;
-		};
 		3036749C205DFB0A00042E33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06D7CA14E7DDFF69E33D58EB /* Pods-SpecialContentDetection.debug.xcconfig */;
@@ -1130,24 +922,6 @@
 			buildConfigurations = (
 				30367477205DF9FE00042E33 /* Debug */,
 				30367478205DF9FE00042E33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30367479205DF9FE00042E33 /* Build configuration list for PBXNativeTarget "ChatSpecialContentTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3036747A205DF9FE00042E33 /* Debug */,
-				3036747B205DF9FE00042E33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3036747C205DF9FE00042E33 /* Build configuration list for PBXNativeTarget "ChatSpecialContentUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3036747D205DF9FE00042E33 /* Debug */,
-				3036747E205DF9FE00042E33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
