@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var detectButton: UIButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
-  let detector = TestDetector()
+  let detector = ChatContentJSONEncoder()
   let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
@@ -51,33 +51,3 @@ class ViewController: UIViewController {
       .disposed(by: disposeBag)
   }
 }
-
-class TestDetector: ChatContentDetector {
-  
-  enum ContentError: Error {
-    case empty
-  }
-  
-  let encoder: JSONEncoder = JSONEncoder()
-  
-  override init() {
-    encoder.outputFormatting = .prettyPrinted
-  }
-  
-  func detectContent(in message: String) -> Maybe<String> {
-    return super.detectContent(in: message, types: [.mention, .emoticon, .link])
-      .map({ [encoder] content -> Data? in try? encoder.encode(content) }) // encode to JSON data
-      .map({ jsonData -> String? in jsonData.flatMap { String(data: $0, encoding: .utf8) } })
-      .flatMap({ (jsonString) -> Maybe<String> in
-        Maybe.create(subscribe: { (maybe) -> Disposable in
-          if let jsonString = jsonString {
-            maybe(.success(jsonString.replacingOccurrences(of: "\\/", with: "/")))
-          } else {
-            maybe(.error(ContentError.empty))
-          }
-          return Disposables.create()
-        })
-      })
-  }
-}
-
